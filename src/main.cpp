@@ -21,5 +21,6 @@ int main(int argc, char* argv[])
 	std::cout << "\n";
 	logger.macroTest();
 	std::getchar();
+
 	return 0;
 }

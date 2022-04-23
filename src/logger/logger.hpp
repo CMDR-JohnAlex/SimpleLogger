@@ -11,14 +11,14 @@
 class Logger
 {
 public:
-#define UNKNOWN Logger::SeverityLevels::Unknown
-#define FAILURE Logger::SeverityLevels::Failure
-#define ERROR Logger::SeverityLevels::Error
-#define WARNING Logger::SeverityLevels::Warning
-#define IMPORTANT Logger::SeverityLevels::Important
-#define INFO Logger::SeverityLevels::Info
-#define DEBUG Logger::SeverityLevels::Debug
-#define VERBOSE Logger::SeverityLevels::Verbose
+	#define UNKNOWN Logger::SeverityLevels::Unknown
+	#define FAILURE Logger::SeverityLevels::Failure
+	#define ERROR Logger::SeverityLevels::Error
+	#define WARNING Logger::SeverityLevels::Warning
+	#define IMPORTANT Logger::SeverityLevels::Important
+	#define INFO Logger::SeverityLevels::Info
+	#define DEBUG Logger::SeverityLevels::Debug
+	#define VERBOSE Logger::SeverityLevels::Verbose
 
 	enum class SeverityLevels
 	{
