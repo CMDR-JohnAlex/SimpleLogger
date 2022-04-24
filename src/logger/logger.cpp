@@ -20,11 +20,13 @@ Logger::Logger(const std::string& path)
 	logFileRead << '\n';
 }
 
+
 // Destructor
 Logger::~Logger()
 {
 
 }
+
 
 void Logger::log(const std::string& message, const std::source_location& location) // Usage: `log("Message")`
 {
@@ -48,6 +50,7 @@ void Logger::log(const SeverityLevels& severityLevel, const std::string& message
 		break;
 	}
 }
+
 
 void Logger::logToFile(const SeverityLevels& severityLevel, const std::string& message, const std::source_location& location)
 {
@@ -80,6 +83,7 @@ void Logger::logToStdout(const SeverityLevels& severityLevel, const std::string&
 	std::cout << ": ";
 	std::cout << message << '\n';
 }
+
 
 std::string Logger::logSeverityToText(const SeverityLevels& severityLevel)
 {
@@ -126,11 +130,89 @@ std::string Logger::UTCTime()
 	return UTCTime;
 }
 
+// Functions to change options
+void Logger::changeLogPath(std::string newPath)
+{
+	if (newPath == "Default")
+		logPath = defaultLogPath;
+	else
+		logPath = newPath;
+}
+
+void Logger::changeLoggingMode(std::string newMode)
+{
+	if (newMode == "Default")
+		loggingMode = defaultLoggingMode;
+	if (newMode == "All" || newMode == "Both")
+		loggingMode = LoggingModes::All;
+	if (newMode == "File")
+		loggingMode = LoggingModes::File;
+	if (newMode == "Stdcout")
+		loggingMode = LoggingModes::Stdcout;
+}
+
+void Logger::changeVerboseLevel(std::string newLevel)
+{
+	if (newLevel == "Default")
+		verboseLevel = verboseLevelDefault;
+}
+
+void Logger::changeVerboseLevel(int newLevel) noexcept
+{
+	verboseLevel = newLevel;
+}
+
+void Logger::changeShowColor(std::string newValue)
+{
+	if (newValue == "Default")
+		showColor = showColorDefault;
+}
+
+void Logger::changeShowColor(bool newValue) noexcept
+{
+	showColor = newValue;
+}
+
+void Logger::changeShowFile(std::string newValue)
+{
+	if (newValue == "Default")
+		showFile = showFileDefault;
+}
+
+void Logger::changeShowFile(bool newValue) noexcept
+{
+	showFile = newValue;
+}
+
+void Logger::changeShowLineNumber(std::string newValue)
+{
+	if (newValue == "Default")
+		showLineNumber = showLineNumberDefault;
+}
+
+void Logger::changeShowLineNumber(bool newValue) noexcept
+{
+	showLineNumber = newValue;
+}
+
+void Logger::changeShowFunction(std::string newValue)
+{
+	if (newValue == "Default")
+		showFunction = showFunctionDefault;
+}
+
+void Logger::changeShowFunction(bool newValue) noexcept
+{
+	showFunction = newValue;
+}
+
+
 void Logger::clearLogFile()
 {
 	std::fstream logFileRead(logPath);
 	logFileRead << '\n';
 }
+
 
 void Logger::macroTest()
 {
