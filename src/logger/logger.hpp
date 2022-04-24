@@ -11,14 +11,14 @@
 class Logger
 {
 public:
-#define UNKNOWN Logger::SeverityLevels::Unknown
-#define FAILURE Logger::SeverityLevels::Failure
-#define ERROR Logger::SeverityLevels::Error
-#define WARNING Logger::SeverityLevels::Warning
-#define IMPORTANT Logger::SeverityLevels::Important
-#define INFO Logger::SeverityLevels::Info
-#define DEBUG Logger::SeverityLevels::Debug
-#define VERBOSE Logger::SeverityLevels::Verbose
+	#define UNKNOWN Logger::SeverityLevels::Unknown
+	#define FAILURE Logger::SeverityLevels::Failure
+	#define ERROR Logger::SeverityLevels::Error
+	#define WARNING Logger::SeverityLevels::Warning
+	#define IMPORTANT Logger::SeverityLevels::Important
+	#define INFO Logger::SeverityLevels::Info
+	#define DEBUG Logger::SeverityLevels::Debug
+	#define VERBOSE Logger::SeverityLevels::Verbose
 
 	enum class SeverityLevels
 	{
@@ -54,16 +54,29 @@ private:
 		Stdcout = 2
 	};
 
-	std::string logPath = "data/logs/logData.log";
-	LoggingModes loggingMode = LoggingModes::All;
-	int verboseLevel = -2;
+	// Defaults
+	const char* defaultLogPath            = "data/logs/logData.log";
+	const LoggingModes defaultLoggingMode = LoggingModes::All;
+	const bool showColorDefault           = true;
+	const bool showFileDefault            = true;
+	const bool showLineNumberDefault      = true;
+	const bool showFunctionDefault        = true;
 
-	// TODO: Add function that can change some private members like verboseLevel and if some things show or hide
+#if _DEBUG
+	int verboseLevelDefault = -1;
+#else
+	int verboseLevelDefault = 0;
+#endif
+
 	// TODO: Make it so you can turn off showFile ONLY for file or ONLY for stdout
-	bool showColor = true;
-	bool showFile = true;
-	bool showLineNumber = true;
-	bool showFunction = true;
+	// Options
+	std::string logPath      = defaultLogPath;
+	LoggingModes loggingMode = defaultLoggingMode;
+	int verboseLevel         = verboseLevelDefault;
+	bool showColor           = showColorDefault;
+	bool showFile            = showFileDefault;
+	bool showLineNumber      = showLineNumberDefault;
+	bool showFunction        = showFunctionDefault;
 
 public:
 	// Constructors
@@ -85,6 +98,20 @@ private:
 	std::string UTCTime();
 
 public:
+	// Functions to change options
+	void changeLogPath(std::string newPath);
+	void changeLoggingMode(std::string newMode);
+	void changeVerboseLevel(std::string newLevel);
+	void changeVerboseLevel(int newLevel) noexcept;
+	void changeShowColor(std::string newValue);
+	void changeShowColor(bool newValue) noexcept;
+	void changeShowFile(std::string newValue);
+	void changeShowFile(bool newValue) noexcept;
+	void changeShowLineNumber(std::string newValue);
+	void changeShowLineNumber(bool newValue) noexcept;
+	void changeShowFunction(std::string newValue);
+	void changeShowFunction(bool newValue) noexcept;
+
 	void clearLogFile();
 
 	void macroTest();

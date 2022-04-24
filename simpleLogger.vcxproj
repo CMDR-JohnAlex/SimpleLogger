@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{23520f9b-ad2a-446e-b1e3-b0d84b881933}</ProjectGuid>
-    <RootNamespace>simpleLogger</RootNamespace>
+    <RootNamespace>SimpleLogger</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
