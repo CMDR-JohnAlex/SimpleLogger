@@ -12,7 +12,7 @@ Licensing
 
 MIT License
 
-Copyright (c) 2022 simpleLogger Developers (see [AUTHORS.md](AUTHORS.md))
+Copyright (c) 2022 John Alexander Le Roux and simpleLogger Developers (see [AUTHORS.md](AUTHORS.md))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

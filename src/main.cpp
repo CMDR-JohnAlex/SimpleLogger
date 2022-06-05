@@ -20,11 +20,15 @@ int main(int argc, char* argv[])
 	logger.changeLogPath("data/log/log/hello.log"); // Will change new logs to "data/log/log/hello.log"
 	logger.changeLogPath("Default");                // Will change log path to default
 	
-	// How to change the logging mode
-	logger.changeLoggingMode("All");                // Will change logging mode to both file and stdcout
-	logger.changeLoggingMode("File");               // Will change logging mode to file
-	logger.changeLoggingMode("Stdcout");            // Will change logging mode to stdcout
+	// How to change the logging modes
 	logger.changeLoggingMode("Default");            // Will change logging mode to default
+
+	logger.changeLoggingMode("All", true);          // Will change all logging modes on
+	logger.changeLoggingMode("All", false);         // Will change all logging modes off
+	logger.changeLoggingMode("File", true);         // Will change file logging mode on
+	logger.changeLoggingMode("File", false);        // Will change file logging mode off
+	logger.changeLoggingMode("Stdcout", true);      // Will change stdcout logging mode on
+	logger.changeLoggingMode("Stdcout", false);     // Will change stdcout logging mode off
 
 	// How to change verbose level
 	logger.changeVerboseLevel(-1);                  // Verbose set to debug messages (-1) and up

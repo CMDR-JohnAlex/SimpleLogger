@@ -47,20 +47,14 @@ public:
 	};
 
 private:
-	enum class LoggingModes
-	{
-		All = 0,
-		File = 1,
-		Stdcout = 2
-	};
-
 	// Defaults
-	const char* defaultLogPath            = "data/logs/logData.log";
-	const LoggingModes defaultLoggingMode = LoggingModes::All;
-	const bool showColorDefault           = true;
-	const bool showFileDefault            = true;
-	const bool showLineNumberDefault      = true;
-	const bool showFunctionDefault        = true;
+	const char* defaultLogPath          = "data/logs/logData.log";
+	const bool  showColorDefault        = true;
+	const bool  showFileDefault         = true;
+	const bool  showLineNumberDefault   = true;
+	const bool  showFunctionDefault     = true;
+	const bool  logToFileModeDefault    = true;
+	const bool  logToStdcoutModeDefault = true;
 
 #if _DEBUG
 	int verboseLevelDefault = -1;
@@ -70,13 +64,14 @@ private:
 
 	// TODO: Make it so you can turn off showFile ONLY for file or ONLY for stdout
 	// Options
-	std::string logPath      = defaultLogPath;
-	LoggingModes loggingMode = defaultLoggingMode;
-	int verboseLevel         = verboseLevelDefault;
-	bool showColor           = showColorDefault;
-	bool showFile            = showFileDefault;
-	bool showLineNumber      = showLineNumberDefault;
-	bool showFunction        = showFunctionDefault;
+	std::string logPath                 = defaultLogPath;
+	int verboseLevel                    = verboseLevelDefault;
+	bool showColor                      = showColorDefault;
+	bool showFile                       = showFileDefault;
+	bool showLineNumber                 = showLineNumberDefault;
+	bool showFunction                   = showFunctionDefault;
+	bool logToFileMode                  = logToFileModeDefault;
+	bool logToStdcoutMode               = logToStdcoutModeDefault;
 
 public:
 	// Constructors
@@ -101,6 +96,7 @@ public:
 	// Functions to change options
 	void changeLogPath(std::string newPath);
 	void changeLoggingMode(std::string newMode);
+	void changeLoggingMode(std::string mode, bool newValue);
 	void changeVerboseLevel(std::string newLevel);
 	void changeVerboseLevel(int newLevel) noexcept;
 	void changeShowColor(std::string newValue);
@@ -111,6 +107,12 @@ public:
 	void changeShowLineNumber(bool newValue) noexcept;
 	void changeShowFunction(std::string newValue);
 	void changeShowFunction(bool newValue) noexcept;
+	
+	// Functions to get options
+	std::string getLogPath() const;
+	int getVerboseLevel() const;
+	bool getLogToFileMode() const;
+	bool getLogToStdoutMode() const;
 
 	void clearLogFile();
 
