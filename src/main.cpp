@@ -21,39 +21,38 @@ int main(int argc, char* argv[])
 	logger.changeLogPath("Default");                // Will change log path to default
 	
 	// How to change the logging modes
-	logger.changeLoggingMode("Default");            // Will change logging mode to default
-
 	logger.changeLoggingMode("All", true);          // Will change all logging modes on
 	logger.changeLoggingMode("All", false);         // Will change all logging modes off
 	logger.changeLoggingMode("File", true);         // Will change file logging mode on
 	logger.changeLoggingMode("File", false);        // Will change file logging mode off
 	logger.changeLoggingMode("Stdcout", true);      // Will change stdcout logging mode on
 	logger.changeLoggingMode("Stdcout", false);     // Will change stdcout logging mode off
+	logger.changeLoggingMode("Default");            // Will change logging mode to default
 
 	// How to change verbose level
 	logger.changeVerboseLevel(-1);                  // Verbose set to debug messages (-1) and up
 	logger.changeVerboseLevel(2);                   // Verbose set to warning messages (2) and up
-	logger.changeVerboseLevel("Default");           // Verbose set to default
+	logger.changeVerboseLevel("Default");           // Verbose set to default based on build type
 
 	// How to turn color on and off for stdcout logs
-	logger.changeShowColor(true);                   // stdcout log colors on
-	logger.changeShowColor(false);                  // stdcout log colors off
-	logger.changeShowColor("Default");              // stdcout log colors set to default
+	logger.changeShowColor(true);                   // Stdcout log colors on
+	logger.changeShowColor(false);                  // Stdcout log colors off
+	logger.changeShowColor("Default");              // Stdcout log colors on by default
 
 	// How to show or hide the file that ran the log function
-	logger.changeShowFile(true);                    // 
-	logger.changeShowFile(false);                   //
-	logger.changeShowFile("Default");               //
+	logger.changeShowFile(true);                    // Shows the file that ran the log function
+	logger.changeShowFile(false);                   // Hides the file that ran the log function
+	logger.changeShowFile("Default");               // Shows the file that ran the log function (the default)
 
 	// How to show or hide the line number that ran the log function
-	logger.changeShowLineNumber(true);              //
-	logger.changeShowLineNumber(false);             //
-	logger.changeShowLineNumber("Default");         //
+	logger.changeShowLineNumber(true);              // Shows the line number that ran the log function
+	logger.changeShowLineNumber(false);             // Hides the line number that ran the log function
+	logger.changeShowLineNumber("Default");         // Shows the line number that ran the log function (the default)
 
 	// How to show or hide if the logger logs what function ran the log function
-	logger.changeShowFunction(true);                //
-	logger.changeShowFunction(false);               //
-	logger.changeShowFunction("Default");           //
+	logger.changeShowFunction(true);                // Shows the function that ran the log function
+	logger.changeShowFunction(false);               // Hides the function that ran the log function
+	logger.changeShowFunction("Default");           // Shows the function that ran the log function (the default)
 
 
 
