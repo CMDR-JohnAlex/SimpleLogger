@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.0]
+
+### Changed
+* Changed the way you select logging modes to support different options in the future. So if there are different modes you can select mode one and three instead of just mode one, just mode two, or all the possible modes
+* Updated the crap 'documentation' (it's main.cpp as an example how to use this library)
+
+-------------------------------------------------------------------------------------------------------------
+## [0.6.1]
+
+### Changed
+* Changed colour of UNKNOWN log level to grey or 'bright black'
+
+-------------------------------------------------------------------------------------------------------------
+
 ## [0.6.0]
 
 ### Added

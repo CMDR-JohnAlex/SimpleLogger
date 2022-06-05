@@ -36,19 +36,10 @@ void Logger::log(const std::string& message, const std::source_location& locatio
 void Logger::log(const SeverityLevels& severityLevel, const std::string& message, const std::source_location& location) // Usage: `log(DEBUG, "Message")`
 {
 	if ((int)severityLevel < verboseLevel) return;
-	switch (static_cast<Logger::LoggingModes>(loggingMode))
-	{
-	case Logger::LoggingModes::All:
+	if (logToFileMode == true)
 		logToFile(severityLevel, message, location);
+	if (logToStdcoutMode == true)
 		logToStdout(severityLevel, message, location);
-		break;
-	case Logger::LoggingModes::File:
-		logToFile(severityLevel, message, location);
-		break;
-	case Logger::LoggingModes::Stdcout:
-		logToStdout(severityLevel, message, location);
-		break;
-	}
 }
 
 
@@ -114,7 +105,7 @@ std::string Logger::logSeverityToColor(const SeverityLevels& severityLevel)
 	case SeverityLevels::Debug:     return "\x1b[35m[  DEBUG  ]\x1b[0m";
 	case SeverityLevels::Verbose:   return "\x1b[35m[ VERBOSE ]\x1b[0m";
 	}
-	return "[ UNKNOWN ]";
+	return "\x1b[90m[ UNKNOWN ]\x1b[0m";
 }
 
 std::string Logger::UTCTime()
@@ -142,13 +133,23 @@ void Logger::changeLogPath(std::string newPath)
 void Logger::changeLoggingMode(std::string newMode)
 {
 	if (newMode == "Default")
-		loggingMode = defaultLoggingMode;
-	if (newMode == "All" || newMode == "Both")
-		loggingMode = LoggingModes::All;
-	if (newMode == "File")
-		loggingMode = LoggingModes::File;
-	if (newMode == "Stdcout")
-		loggingMode = LoggingModes::Stdcout;
+	{
+		logToFileMode = logToFileModeDefault;
+		logToStdcoutMode = logToStdcoutModeDefault;
+	}
+}
+
+void Logger::changeLoggingMode(std::string mode, bool newValue)
+{
+	if (mode == "All")
+	{
+		logToFileMode = newValue;
+		logToStdcoutMode = newValue;
+	}
+	if (mode == "File")
+		logToFileMode = newValue;
+	if (mode == "Stdcout")
+		logToStdcoutMode = newValue;
 }
 
 void Logger::changeVerboseLevel(std::string newLevel)
@@ -204,6 +205,27 @@ void Logger::changeShowFunction(std::string newValue)
 void Logger::changeShowFunction(bool newValue) noexcept
 {
 	showFunction = newValue;
+}
+
+// Functions to get options
+std::string Logger::getLogPath() const noexcept
+{
+	return logPath;
+}
+
+int Logger::getVerboseLevel() const noexcept
+{
+	return verboseLevel;
+}
+
+bool Logger::getLogToFileMode() const noexcept
+{
+	return logToFileMode;
+}
+
+bool Logger::getLogToStdoutMode() const noexcept
+{
+	return logToStdcoutMode;
 }
 
 
