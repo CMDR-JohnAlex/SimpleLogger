@@ -7,7 +7,6 @@
 // Constructor
 Logger::Logger()
 {
-	// TODO: Check if log file is new, then add some special log start
 	std::fstream logFileRead(logPath, std::ios::out | std::ios::app); // std::ios::app will add to the file instead of deleting the old contents
 	logFileRead << '\n';
 }
