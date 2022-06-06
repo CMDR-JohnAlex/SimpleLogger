@@ -5,6 +5,9 @@
 ### Added
 * Added todo list at the top of logger.hpp
 
+### Changed
+* Marked logger class's destructor virtual
+
 -------------------------------------------------------------------------------------------------------------
 
 ## [0.7.1]
