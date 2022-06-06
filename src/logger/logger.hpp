@@ -5,7 +5,6 @@
 // 3rd Party Library Headers
 
 // Standard Library Headers
-#include <iostream>
 #include <source_location>
 
 class Logger
@@ -17,6 +16,7 @@ class Logger
 	* TODO: Custom log format, not just the default one with time, log level, file, line number, function and message and the ability to disable or enable certain formats. Make it so people can choose where the time, log level and everything goes if they are even there at all. Also add the option for custom identifiers like ip address `[012.345.6.78]` if logger is attached to some web or internet service
 	* TODO: Option for daily log files so that if you want to keep a log file for each day, you can do that
 	* TODO: When starting a new log, at some nice (and customizable) start to the log, as simple as a message saying the log started `Log for _____ application started at xx:xx`
+	* TODO: Change logging from stdcout to stderr
 	*/
 public:
 	#define UNKNOWN Logger::SeverityLevels::Unknown

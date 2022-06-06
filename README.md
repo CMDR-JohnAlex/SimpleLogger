@@ -27,7 +27,13 @@ simpleLogger should work on all operating systems such as Windows, Linux and Mac
 
 ## Features
 
-* Header and source file library, only header file include
+* Simple integration
+    * Just two files, logger.hpp and logger.cpp
+	* Only include logger.hpp
+* Small and simple library
+    * Cross-platform
+    * Small header with minimal includes for speed
+	* No external dependencies
 * Multiple log targets
 	* Console logging (Console colors supported!)
 	* File logging

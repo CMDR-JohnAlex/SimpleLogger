@@ -4,9 +4,12 @@
 
 ### Added
 * Added todo list at the top of logger.hpp
+* Added more todos
+* Added more info on library in README.md
 
 ### Changed
 * Marked logger class's destructor virtual
+* Moved headers for minimal includes
 
 -------------------------------------------------------------------------------------------------------------
 

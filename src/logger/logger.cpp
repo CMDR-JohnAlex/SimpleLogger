@@ -1,4 +1,5 @@
 #include "logger.hpp"
+#include <iostream>
 #include <fstream>
 #include <format>
 #include <chrono>
