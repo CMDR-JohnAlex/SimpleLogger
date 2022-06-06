@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.7.2]
+
+### Added
+* Added todo list at the top of logger.hpp
+* Added more todos
+* Added more info on library in README.md
+
+### Changed
+* Marked logger class's destructor virtual
+* Moved headers for minimal includes
+
+### Fixed
+* Fixed critical bug caused by noob programmer not checking if code works
+
+-------------------------------------------------------------------------------------------------------------
+
+## [0.7.1]
+
+### Added
+* Finished 'documentation' in main.cpp
+
+-------------------------------------------------------------------------------------------------------------
+
 ## [0.7.0]
 
 ### Changed
@@ -7,6 +30,7 @@
 * Updated the crap 'documentation' (it's main.cpp as an example how to use this library)
 
 -------------------------------------------------------------------------------------------------------------
+
 ## [0.6.1]
 
 ### Changed

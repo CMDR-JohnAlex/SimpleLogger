@@ -7,7 +7,6 @@
 // Constructor
 Logger::Logger()
 {
-	// TODO: Check if log file is new, then add some special log start
 	std::fstream logFileRead(logPath, std::ios::out | std::ios::app); // std::ios::app will add to the file instead of deleting the old contents
 	logFileRead << '\n';
 }
@@ -208,22 +207,22 @@ void Logger::changeShowFunction(bool newValue) noexcept
 }
 
 // Functions to get options
-std::string Logger::getLogPath() const noexcept
+std::string Logger::getLogPath() const
 {
 	return logPath;
 }
 
-int Logger::getVerboseLevel() const noexcept
+int Logger::getVerboseLevel() const
 {
 	return verboseLevel;
 }
 
-bool Logger::getLogToFileMode() const noexcept
+bool Logger::getLogToFileMode() const
 {
 	return logToFileMode;
 }
 
-bool Logger::getLogToStdoutMode() const noexcept
+bool Logger::getLogToStdoutMode() const
 {
 	return logToStdcoutMode;
 }
