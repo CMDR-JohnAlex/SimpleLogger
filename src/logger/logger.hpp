@@ -10,6 +10,14 @@
 
 class Logger
 {
+	/* TODO_LIST:
+	* TODO: Make it so you can turn off options ONLY for a specific logging mode
+	* TODO: Make it so you can turn off logging levels like warning without disabling important, info and debug logging levels
+	* TODO: Make an application that can read a log file and filter all the different log levels. That way you can turn off info and/or important messages while still keep debug, error, warning messages visible
+	* TODO: Custom log format, not just the default one with time, log level, file, line number, function and message and the ability to disable or enable certain formats. Make it so people can choose where the time, log level and everything goes if they are even there at all. Also add the option for custom identifiers like ip address `[012.345.6.78]` if logger is attached to some web or internet service
+	* TODO: Option for daily log files so that if you want to keep a log file for each day, you can do that
+	* TODO: When starting a new log, at some nice (and customizable) start to the log, as simple as a message saying the log started `Log for _____ application started at xx:xx`
+	*/
 public:
 	#define UNKNOWN Logger::SeverityLevels::Unknown
 	#define FAILURE Logger::SeverityLevels::Failure
@@ -62,7 +70,6 @@ private:
 	int verboseLevelDefault = 0;
 #endif
 
-	// TODO: Make it so you can turn off showFile ONLY for file or ONLY for stdout
 	// Options
 	std::string logPath                 = defaultLogPath;
 	int verboseLevel                    = verboseLevelDefault;

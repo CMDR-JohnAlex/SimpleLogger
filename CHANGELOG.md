@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.2]
+
+### Added
+* Added todo list at the top of logger.hpp
+
+### Changed
+* Marked logger class's deconstructor virtual
+
+-------------------------------------------------------------------------------------------------------------
+
 ## [0.7.1]
 
 ### Added

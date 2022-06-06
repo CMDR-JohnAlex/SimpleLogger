@@ -16,11 +16,51 @@
 
 ## About simpleLogger
 
-A simple and super small logger, see `src/main.cpp` to see an example on how to use.
+simpleLogger is a small header and source file logging library made in C++.
+
+## Platforms
+
+simpleLogger should work on all operating systems such as Windows, Linux and Mac OS but is currently tested on the following:
+
+* Windows 10
+* Windows 11
+
+## Features
+
+* Header and source file library, only header file include
+* Multiple log targets
+	* Console logging (Console colors supported!)
+	* File logging
+	* And the best part, the code is extendable so you can add different log targets
+
+## Usage example
+
+You can use `src/main.cpp` as an example on how to use everything in this library.
+
+Here is a quick example:
+
+```cpp
+#include "logger.hpp"
+
+int main()
+{
+	// Log examples
+	logger.log("Example of an unknown log severity");
+	logger.log(FAILURE, "Imminent program failure");
+	logger.log(ERROR, "Error, but program can continue");
+	logger.log(WARNING, "Warning");
+	logger.log(IMPORTANT, "Important messages, more relevant than regular info messages");
+	logger.log(INFO, "Default level on release builds. Used for general messages");
+	logger.log(DEBUG, "Default level on debug builds. Used for messages that are only relevant to the developer");
+	logger.log(VERBOSE, "Verbose level on debug builds. Useful when developers need more information");
+	
+	return 0;
+}
+```
 
 ## Documentation
 
-Our Documentation can be found in the code's //comments.
+Our Documentation can be found in the code's //comments and an example to use this library is in `src/main.cpp`
 
 ## Bug Reporting
 
