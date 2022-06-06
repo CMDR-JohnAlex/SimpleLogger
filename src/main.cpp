@@ -54,14 +54,6 @@ int main(int argc, char* argv[])
 	logger.changeShowFunction(false);               // Hides the function that ran the log function
 	logger.changeShowFunction("Default");           // Shows the function that ran the log function (the default)
 
-
-
-	logger.changeLogPath("data/log/log/hello.log");
-	logger.changeLogPath("Default"); // Will change log path to defaults
-
-	logger.changeShowColor(false); // Log colors (only to stdcout) is turned off
-	logger.changeShowColor(true); // Log colors (only to stdcout) is turned on
-
 	std::cout << "\n";
 	logger.macroTest();
 
