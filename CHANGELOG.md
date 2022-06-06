@@ -11,6 +11,9 @@
 * Marked logger class's destructor virtual
 * Moved headers for minimal includes
 
+### Fixed
+* Fixed critical bug caused by noob programmer not checking if code works
+
 -------------------------------------------------------------------------------------------------------------
 
 ## [0.7.1]

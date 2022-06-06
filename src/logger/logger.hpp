@@ -6,6 +6,7 @@
 
 // Standard Library Headers
 #include <source_location>
+#include <iostream>
 
 class Logger
 {

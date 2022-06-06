@@ -1,5 +1,4 @@
 #include "logger.hpp"
-#include <iostream>
 #include <fstream>
 #include <format>
 #include <chrono>
@@ -208,22 +207,22 @@ void Logger::changeShowFunction(bool newValue) noexcept
 }
 
 // Functions to get options
-std::string Logger::getLogPath() const noexcept
+std::string Logger::getLogPath() const
 {
 	return logPath;
 }
 
-int Logger::getVerboseLevel() const noexcept
+int Logger::getVerboseLevel() const
 {
 	return verboseLevel;
 }
 
-bool Logger::getLogToFileMode() const noexcept
+bool Logger::getLogToFileMode() const
 {
 	return logToFileMode;
 }
 
-bool Logger::getLogToStdoutMode() const noexcept
+bool Logger::getLogToStdoutMode() const
 {
 	return logToStdcoutMode;
 }
