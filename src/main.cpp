@@ -1,5 +1,5 @@
 // JOHN ALEXANDER LE ROUX
-#include "logger/logger.hpp"
+#include "logger/logger.hpp" // Only include file
 #include <iostream>
 
 Logger logger{ "data/logData.log" }; // This will log to "data/logData.log" if used as `Logger logger` then it will use default log path of "data/logs/logData.log"
