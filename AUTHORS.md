@@ -6,6 +6,7 @@ The simpleLogger Developers are:
 | Username               | Name                   |
 | ---------------------- | ---------------------- |
 | CMDR-JohnAlex          | John Alexander Le Roux |
+| CMDR-Piboy314          | Piboy314               |
 
 Licensing
 =========
